@@ -5,14 +5,14 @@ export default function Home() {
     const metrika = process.env.NEXT_PUBLIC_YANDEX_METRIKA
 
     return (
-        <div className={}>
+        <div className={"x"}>
             <Head>
                 <title>pollinating</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={}>
-                <h1 className={}>
+            <main className={"x"}>
+                <h1 className={"x"}>
                   pollinating.space
                 </h1>
             </main>
