@@ -1,9 +1,10 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { MantineProvider } from '@mantine/core'
+import { App } from '@/components/App'
 import '@/style.css'
 
-export default function App(props: AppProps) {
+export default function AppPage(props: AppProps) {
     const { Component, pageProps } = props
 
     return (
@@ -23,7 +24,9 @@ export default function App(props: AppProps) {
                     }
                 }}
             >
-                <Component {...pageProps} />
+                <App>
+                    <Component {...pageProps} />
+                </App>
             </MantineProvider>
         </>
     )
