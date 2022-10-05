@@ -45,6 +45,11 @@ export const App: React.FC<AppProps> = ({ children }) => {
                     </Navbar>
                 </MediaQuery>
             )}
+            footer={(
+                <div style={{
+                    height: '4rem',
+                }} />
+            )}
         >
             {children}
         </AppShell>
