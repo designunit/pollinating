@@ -4,6 +4,7 @@ import { AppMenu } from '@/components/AppMenu'
 
 type AppHeaderProps = {
     burger: React.ReactNode
+    opened: boolean
 }
 
 const useStyles = createStyles((theme) => ({
@@ -14,6 +15,9 @@ const useStyles = createStyles((theme) => ({
         top: 0,
         backgroundColor: 'transparent',
     },
+    opened: {
+        backgroundColor: 'white',
+    },
     root: {
         flex: 1,
         display: 'flex',
@@ -23,14 +27,14 @@ const useStyles = createStyles((theme) => ({
     },
 }))
 
-export const AppHeader: React.FC<AppHeaderProps> = ({ burger }) => {
-    const { classes: s } = useStyles()
+export const AppHeader: React.FC<AppHeaderProps> = ({ burger, opened }) => {
+    const { classes: s, cx } = useStyles()
     return (
         <Header
             withBorder={false}
             height={60}
             p={'sm'}
-            className={s.header}
+            className={cx(s.header, opened && s.opened)}
             fixed
         >
             <div className={s.root}>

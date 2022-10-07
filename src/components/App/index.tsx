@@ -24,6 +24,7 @@ export const App: React.FC<AppProps> = ({ children }) => {
             })}
             header={(
                 <AppHeader
+                    opened={opened}
                     burger={(
                         <Burger
                             opened={opened}
