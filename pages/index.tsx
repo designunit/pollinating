@@ -1,10 +1,21 @@
-import { createStyles, List, Stack, Title, Text, Timeline, Image, Group } from '@mantine/core'
+import { createStyles, List, Stack, Title, Text, Timeline, Image, Group, BackgroundImage } from '@mantine/core'
 
 
 const useStyles = createStyles((theme) => ({
     section: {
         width: '100%',
         maxWidth: 1520,
+        padding: theme.spacing.xs,
+    },
+    hero: {
+        position: 'relative',
+        minHeight: 'min(800px, 100vh)',
+        ['& > div']: {
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            width: '100%',
+        },
     },
 }))
 
@@ -65,15 +76,38 @@ const ideasItems = [
 
 export default function Home() {
     const metrika = process.env.NEXT_PUBLIC_YANDEX_METRIKA
-    const { classes: s } = useStyles()
+    const { classes: s, cx } = useStyles()
     return (
         <Stack
             spacing={'4rem' as any}
             align='center'
         >
-            <Title>
-                pollinating.space
-            </Title>
+            <BackgroundImage
+                className={cx(s.hero)}
+                src='/hero.png'
+            >
+                <Stack
+                    justify='center'
+                    align='center'
+                    px='xs'
+                    sx={{
+                        textShadow: '0px 4px 4px #FFFFFF',
+                    }}
+                >
+                    <Title
+                        sx={{
+                            fontSize: 'min(96px, 5vw)',
+                            textTransform: 'uppercase',
+                        }}
+                    >
+                        pollinating.space
+                    </Title>
+                    <Text>
+                        pollinating.space - the ecosystem for pollinating green communities that include several resources to help<br />
+                        greening and ecological activist and communities to cooperate online in safe and productive environment
+                    </Text>
+                </Stack>
+            </BackgroundImage>
             <Stack
                 className={s.section}
             >

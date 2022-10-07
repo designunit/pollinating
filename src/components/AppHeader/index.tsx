@@ -11,8 +11,8 @@ const useStyles = createStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'baseline',
-        position: 'sticky',
         top: 0,
+        backgroundColor: 'transparent',
     },
     root: {
         flex: 1,
@@ -31,6 +31,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ burger }) => {
             height={60}
             p={'sm'}
             className={s.header}
+            fixed
         >
             <div className={s.root}>
                 <div>

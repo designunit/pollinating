@@ -21,7 +21,12 @@ export default function AppPage(props: AppProps) {
                     fontFamily: 'Jost, sans-serif',
                     headings: {
                         fontFamily: 'Jost, sans-serif',
-                    }
+                    },
+                    globalStyles: theme => ({
+                        main: {
+                            padding: '0 !important',
+                        },
+                    }),
                 }}
             >
                 <App>
