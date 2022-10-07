@@ -199,6 +199,7 @@ export default function Home() {
                     radius='xl'
                     bulletSize={20}
                     active={1}
+                    color={'default'}
                     styles={{
                         itemTitle: {
                             textTransform: 'uppercase',
