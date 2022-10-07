@@ -96,7 +96,7 @@ export default function Home() {
                 >
                     <Title
                         sx={{
-                            fontSize: 'min(96px, 5vw)',
+                            fontSize: 'min(96px, 8vw)',
                             textTransform: 'uppercase',
                         }}
                     >
