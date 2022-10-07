@@ -1,5 +1,5 @@
 
-import { createStyles, Group, Header, MediaQuery } from '@mantine/core'
+import { createStyles, Group, Header, Image, MediaQuery } from '@mantine/core'
 import { AppMenu } from '@/components/AppMenu'
 
 type AppHeaderProps = {
@@ -25,6 +25,12 @@ const useStyles = createStyles((theme) => ({
         justifyContent: 'space-between',
         maxWidth: 1520,
     },
+    logo: {
+        [theme.fn.smallerThan('md')]: {
+            width: 60,
+            height: 60,
+        }
+    }
 }))
 
 export const AppHeader: React.FC<AppHeaderProps> = ({ burger, opened }) => {
@@ -38,8 +44,12 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ burger, opened }) => {
             fixed
         >
             <div className={s.root}>
-                <div>
-                    LOGO
+                <div
+                    className={s.logo}
+                >
+                    <Image
+                        src='/logo.svg'
+                    />
                 </div>
 
                 <MediaQuery smallerThan='xs' styles={{ display: 'none' }}>
