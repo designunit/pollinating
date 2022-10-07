@@ -1,15 +1,17 @@
-import { Button, createStyles } from '@mantine/core'
+import { Anchor, createStyles } from '@mantine/core'
 import Link from 'next/link'
 
 const useStyles = createStyles((theme) => ({
     navLinks: {
         flexGrow: 1,
         textAlign: 'right',
+        display: 'flex',
+        gap: theme.spacing.xl,
     },
     vertical: {
-        display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
+        padding: theme.spacing.xl,
     },
 }))
 
@@ -46,13 +48,9 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false }) => {
         <nav className={cx(s.navLinks, vertical && s.vertical)}>
             {items.map(({ text, href }) => (
                 <Link href={href} passHref>
-                    <Button
-                        component='a'
-                        variant='subtle'
-                        color='dark'
-                    >
+                    <Anchor component="a">
                         {text}
-                    </Button>
+                    </Anchor>
                 </Link>
             ))}
         </nav>
