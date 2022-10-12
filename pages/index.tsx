@@ -104,21 +104,27 @@ export default function Home() {
                     justify='center'
                     align='center'
                     px='xs'
-                    sx={{
-                        textShadow: '0px 4px 4px #FFFFFF',
-                    }}
                 >
-                    <Title
+                    <Stack
+                        className={s.section}
                         sx={{
-                            fontSize: 'min(96px, 8vw)',
-                            textTransform: 'uppercase',
+                            textShadow: '0px 4px 4px #FFFFFF',
+                            gap: '4rem',
                         }}
                     >
-                        pollinating.space
-                    </Title>
-                    <Text>
-                        {i18n.t('index.hero')}
-                    </Text>
+                        <Title
+                            sx={{
+                                fontSize: 'min(96px, 12vw)',
+                                textTransform: 'uppercase',
+                            }}
+                        >
+                            pollinating<br />
+                            space
+                        </Title>
+                        <Text>
+                            {i18n.t('index.hero')}
+                        </Text>
+                    </Stack>
                 </Stack>
             </BackgroundImage>
             <Stack
@@ -200,7 +206,7 @@ export default function Home() {
                     radius='xl'
                     bulletSize={20}
                     active={i18n.t('index.timeline.items').length}
-                    color={'gray'}
+                    color={'timeline'}
                     styles={{
                         itemTitle: {
                             textTransform: 'uppercase',

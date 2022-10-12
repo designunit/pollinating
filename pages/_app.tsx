@@ -26,7 +26,8 @@ export default function AppPage(props: AppProps) {
                     fontFamily: 'Jost, sans-serif',
                     primaryColor: 'default',
                     colors: {
-                        default: ['#22303B', '#8FACA7', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B'],
+                        default: ['#22303B', '#539376', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B'],
+                        timeline: ['#539376', '#539376', '#539376', '#539376', '#539376', '#539376', '#539376', '#539376', '#539376', '#539376'],
                     },
                     headings: {
                         fontFamily: 'Jost, sans-serif',

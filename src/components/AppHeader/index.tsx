@@ -24,6 +24,7 @@ const useStyles = createStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         maxWidth: 1520,
+        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 1.57%, rgba(255, 255, 255, 0) 1.58%, rgba(255, 255, 255, 0.5) 32.29%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%)',
     },
     logo: {
         [theme.fn.smallerThan('md')]: {
