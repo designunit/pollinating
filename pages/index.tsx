@@ -59,9 +59,33 @@ const ideasItems = [
     },
 ]
 
+const limelineIcons = {
+    '1': (
+        <div>
+            1
+        </div>
+    ),
+    '5': (
+        <div>
+            2
+        </div>
+    ),
+    '9': ( // snowflake icon
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" />
+            <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(60 12 12)" />
+            <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(120 12 12)" />
+            <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(180 12 12)" />
+            <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(240 12 12)" />
+            <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(300 12 12)" />
+        </svg>
+    )
+}
 export default function Home() {
     const metrika = process.env.NEXT_PUBLIC_YANDEX_METRIKA
     const i18n = useI18n()
+    const t = i18n.withPlural()
     const { classes: s, cx } = useStyles()
     return (
         <Stack
@@ -93,7 +117,7 @@ export default function Home() {
                     </Text>
                 </Stack>
             </BackgroundImage>
-            <Stack
+            {/* <Stack
                 className={s.section}
             >
                 <Title order={2}
@@ -107,13 +131,13 @@ export default function Home() {
                     icon='·'
                 >
                     <List.Item>
-                    {i18n.t('index.ecosystemList.0')}
+                        {i18n.t('index.ecosystemList.0')}
                     </List.Item>
                     <List.Item>
-                    {i18n.t('index.ecosystemList.1')}
+                        {i18n.t('index.ecosystemList.1')}
                     </List.Item>
                     <List.Item>
-                    {i18n.t('index.ecosystemList.2')}
+                        {i18n.t('index.ecosystemList.2')}
                     </List.Item>
                     <List.Item>
                         <Stack
@@ -125,10 +149,10 @@ export default function Home() {
                                 withPadding
                             >
                                 <List.Item>
-                                {i18n.t('index.ecosystemList.3.item0')}
+                                    {i18n.t('index.ecosystemList.3.item0')}
                                 </List.Item>
                                 <List.Item>
-                                {i18n.t('index.ecosystemList.3.item1')}
+                                    {i18n.t('index.ecosystemList.3.item1')}
                                 </List.Item>
                             </List>
                         </Stack>
@@ -143,15 +167,43 @@ export default function Home() {
                                 withPadding
                             >
                                 <List.Item>
-                                {i18n.t('index.ecosystemList.4.item0')}
+                                    {i18n.t('index.ecosystemList.4.item0')}
                                 </List.Item>
                                 <List.Item>
-                                {i18n.t('index.ecosystemList.4.item1')}
+                                    {i18n.t('index.ecosystemList.4.item1')}
                                 </List.Item>
                             </List>
                         </Stack>
                     </List.Item>
                 </List>
+            </Stack> */}
+            <Stack
+                className={s.section}
+            >
+                <Title>
+                    {i18n.t('index.platform.title')}
+                </Title>
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    {i18n.t('index.platform.subtitle')}
+                </Title>
+                <Stack>
+                    {(i18n.t('index.platform.items') as unknown as any[]).map((x, i) => (
+                        <Text key={i}>
+                            <Title order={3}>
+                                {x.title}
+                            </Title>
+                            {x.text}
+                        </Text>
+                    ))}
+                </Stack>
             </Stack>
             <Stack
                 className={s.section}
@@ -160,8 +212,31 @@ export default function Home() {
                     size='xl'
                     weight='bold'
                 >
-                    {i18n.t('index.feedback')}
+                    {i18n.t('index.cta.text')}
                 </Text>
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title>
+                    {i18n.t('index.gsIs.title')}
+                </Title>
+                <List>
+                    {(i18n.t('index.gsIs.items') as unknown as any[]).map((x, i) => (
+                        <List.Item key={i}>
+                            {x.title}
+                            {x.items && (
+                                <List>
+                                    {x.items.map((y, j) => (
+                                        <List.Item key={j}>
+                                            {y}
+                                        </List.Item>
+                                    ))}
+                                </List>
+                            )}
+                        </List.Item>
+                    ))}
+                </List>
             </Stack>
             <Stack
                 className={s.section}
@@ -177,20 +252,26 @@ export default function Home() {
                     lineWidth={2}
                     radius='xl'
                     bulletSize={20}
-                    active={1}
+                    active={i18n.t('index.timeline.items').length}
                     color={'gray'}
                     styles={{
                         itemTitle: {
                             textTransform: 'uppercase',
                             fontWeight: 'bold',
+                        },
+                        itemBullet: {
+                            ['& > *']: {
+                                fontSize: '.8em',
+                            }
                         }
                     }}
                 >
-                    {false && timelineItems.map(({ title, content }) => (
+                    {(i18n.t('index.timeline.items', { limelineIcons }) as unknown as any[]).map((x, i) => (
                         <Timeline.Item
-                            title={title}
+                            title={x.title}
+                            bullet={limelineIcons?.[i]}
                         >
-                            {content}
+                            {x.text && x.text}
                         </Timeline.Item>
                     ))}
                 </Timeline>
@@ -203,30 +284,150 @@ export default function Home() {
                         textTransform: 'uppercase',
                     }}
                 >
-                    WE FOCUS ON 5 IDEAS:
+                    {i18n.t('index.howItWorks.title')}
                 </Title>
-                <Stack>
-                    {ideasItems.map(({ title, text }) => (
-                        <Group
-                            spacing={6}
-                        >
-                            <Text
-                                size='xl'
-                                sx={{
-                                    textTransform: 'uppercase',
-                                }}
-                            >
-                                {title}
-                            </Text>
-                            <span>
-                                {' - '}
-                            </span>
+                <BackgroundImage
+                    className={cx(s.hero)}
+                    src='/howItWorks.png'
+                />
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title order={2}
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    {i18n.t('index.structure.title')}
+                </Title>
+                <Text>
+                    {i18n.t('index.structure.text')}
+                </Text>
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title order={2}
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    {i18n.t('index.events.title')}
+                </Title>
+                {(i18n.t('index.events.items') as unknown as any[]).map((x, i) => (
+                    <Text>
+                        <b>
+                            {x.bold}
+                        </b>
+                        {x.text}
+                    </Text>
+                ))}
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title order={2}
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    {i18n.t('index.roles.title')}
+                </Title>
+                {(i18n.t('index.roles.items') as unknown as any[]).map((x, i) => (
+                    <Text>
+                        <b>
+                            {x.bold}
+                        </b>
+                        {x.text}
+                    </Text>
+                ))}
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title order={2}
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    {i18n.t('index.calendar.title')}
+                </Title>
+                <BackgroundImage
+                    className={cx(s.hero)}
+                    src='/calendar.png'
+                />
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title order={2}
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    {i18n.t('index.rules.title')}
+                </Title>
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title order={2}
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    {i18n.t('index.rules.communication.title')}
+                </Title>
+                <List>
+                    {(i18n.t('index.rules.communication.items') as unknown as any[]).map((x, i) => (
+                        <List.Item key={i}>
                             <Text>
-                                {text}
+                                {x}
                             </Text>
-                        </Group>
+                        </List.Item>
                     ))}
-                </Stack>
+                </List>
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title order={2}
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    {i18n.t('index.rules.gsGroup.title')}
+                </Title>
+                <List>
+                    {(i18n.t('index.rules.gsGroup.items') as unknown as any[]).map((x, i) => (
+                        <List.Item key={i}>
+                            <Text>
+                                {x}
+                            </Text>
+                        </List.Item>
+                    ))}
+                </List>
+            </Stack>
+            <Stack
+                className={s.section}
+            >
+                <Title order={2}
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    {i18n.t('index.rules.gsVote.title')}
+                </Title>
+                <List>
+                    {(i18n.t('index.rules.gsVote.items') as unknown as any[]).map((x, i) => (
+                        <List.Item key={i}>
+                            <Text>
+                                {x}
+                            </Text>
+                        </List.Item>
+                    ))}
+                </List>
             </Stack>
         </Stack>
     )
