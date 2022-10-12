@@ -18,6 +18,10 @@ const useStyles = createStyles((theme) => ({
             width: '100%',
         },
     },
+    idSpan: {
+        position: 'absolute',
+        marginTop: '-8rem',
+    }
 }))
 
 const timelineItems = [
@@ -117,69 +121,12 @@ export default function Home() {
                     </Text>
                 </Stack>
             </BackgroundImage>
-            {/* <Stack
-                className={s.section}
-            >
-                <Title order={2}
-                    sx={{
-                        textTransform: 'uppercase',
-                    }}
-                >
-                    {i18n.t('index.ecosystemList.title')}
-                </Title>
-                <List
-                    icon='·'
-                >
-                    <List.Item>
-                        {i18n.t('index.ecosystemList.0')}
-                    </List.Item>
-                    <List.Item>
-                        {i18n.t('index.ecosystemList.1')}
-                    </List.Item>
-                    <List.Item>
-                        {i18n.t('index.ecosystemList.2')}
-                    </List.Item>
-                    <List.Item>
-                        <Stack
-                            spacing={0}
-                        >
-                            {i18n.t('index.ecosystemList.3.title')}
-                            <List
-                                icon='·'
-                                withPadding
-                            >
-                                <List.Item>
-                                    {i18n.t('index.ecosystemList.3.item0')}
-                                </List.Item>
-                                <List.Item>
-                                    {i18n.t('index.ecosystemList.3.item1')}
-                                </List.Item>
-                            </List>
-                        </Stack>
-                    </List.Item>
-                    <List.Item>
-                        <Stack
-                            spacing={0}
-                        >
-                            {i18n.t('index.ecosystemList.4.title')}
-                            <List
-                                icon='·'
-                                withPadding
-                            >
-                                <List.Item>
-                                    {i18n.t('index.ecosystemList.4.item0')}
-                                </List.Item>
-                                <List.Item>
-                                    {i18n.t('index.ecosystemList.4.item1')}
-                                </List.Item>
-                            </List>
-                        </Stack>
-                    </List.Item>
-                </List>
-            </Stack> */}
             <Stack
                 className={s.section}
             >
+                <span id='about'
+                    className={s.idSpan}
+                />
                 <Title>
                     {i18n.t('index.platform.title')}
                 </Title>
@@ -284,6 +231,9 @@ export default function Home() {
                         textTransform: 'uppercase',
                     }}
                 >
+                    <span id='how'
+                        className={s.idSpan}
+                    />
                     {i18n.t('index.howItWorks.title')}
                 </Title>
                 <BackgroundImage
@@ -346,6 +296,9 @@ export default function Home() {
             <Stack
                 className={s.section}
             >
+                <span id='calendar'
+                    className={s.idSpan}
+                />
                 <Title order={2}
                     sx={{
                         textTransform: 'uppercase',
@@ -361,6 +314,9 @@ export default function Home() {
             <Stack
                 className={s.section}
             >
+                <span id='rules'
+                    className={s.idSpan}
+                />
                 <Title order={2}
                     sx={{
                         textTransform: 'uppercase',

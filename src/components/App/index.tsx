@@ -42,7 +42,10 @@ export const App: React.FC<AppProps> = ({ children }) => {
                             zIndex: 101,
                         }}
                     >
-                        <AppMenu vertical />
+                        <AppMenu 
+                            vertical
+                            onClick={() => setOpened(false)}
+                        />
                     </Navbar>
                 </MediaQuery>
             )}

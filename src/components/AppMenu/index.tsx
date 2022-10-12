@@ -19,47 +19,61 @@ const useStyles = createStyles((theme) => ({
 
 export type AppMenuProps = {
     vertical?: boolean
+    onClick?: () => void
 }
 
 const items = [
     {
-        text: 'About ',
-        href: '/about',
+        ru: 'О платформе',
+        en: 'About',
+        de: 'de-About',
+        href: '/#about',
     },
     {
-        text: 'How we organized ',
-        href: '/organized',
+        ru: 'Как все работает',
+        en: 'en-Как все работает',
+        de: 'de-Как все работает',
+        text: '',
+        href: '/#how',
     },
     {
-        text: 'Calendar  ',
-        href: '/calendar',
+        ru: 'Календарь',
+        en: 'Calendar',
+        de: 'de-Calendar',
+        href: '/#calendar',
     },
     {
-        text: 'Rules',
-        href: '/rules',
+        ru: 'Правила',
+        en: 'Rules',
+        de: 'de-Rules',
+        href: '/#rules',
     },
     {
-        text: 'Communication',
-        href: '/communication',
+        ru: 'Присоединяйтесь',
+        en: 'Join',
+        de: 'de-Join',
+        href: '/',
     },
 ]
 
-export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false }) => {
+export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) => {
     const { classes: s, cx } = useStyles()
     const router = useRouter()
     return (
         <nav className={cx(s.navLinks, vertical && s.vertical)}>
-            {items.map(({ text, href }) => (
+            {items.map(({ href, ...x }) => (
                 <Link href={href} passHref>
-                    <Anchor component="a">
-                        {text}
+                    <Anchor component="a"
+                        onClick={onClick}
+                    >
+                        {x[router.locale]}
                     </Anchor>
                 </Link>
             ))}
             <Select
-            sx={{
-                maxWidth: '4rem',
-            }}
+                sx={{
+                    maxWidth: '4rem',
+                }}
                 variant='unstyled'
                 defaultValue={router.locale}
                 onChange={value => router.push('/', '/', { locale: value })}
