@@ -31,7 +31,7 @@ const items = [
     },
     {
         ru: 'Как все работает',
-        en: 'en-Как все работает',
+        en: 'How it works',
         de: 'de-Как все работает',
         text: '',
         href: '/#how',
