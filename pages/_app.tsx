@@ -3,9 +3,14 @@ import Head from 'next/head'
 import { MantineProvider } from '@mantine/core'
 import { App } from '@/components/App'
 import '@/style.css'
+import { useRouter } from 'next/router'
+import { I18nProvider } from 'next-localization'
 
 export default function AppPage(props: AppProps) {
-    const { Component, pageProps } = props
+    const { Component, pageProps, } = props
+    const router = useRouter()
+    // @ts-ignore
+    const { lngDict, ...rest } = pageProps
 
     return (
         <>
@@ -44,6 +49,7 @@ export default function AppPage(props: AppProps) {
                             styles: theme => ({
                                 root: {
                                     color: theme.colors.default[0],
+                                    whiteSpace: 'pre-line',
                                 },
                             })
                         },
@@ -71,9 +77,11 @@ export default function AppPage(props: AppProps) {
                     }
                 }}
             >
-                <App>
-                    <Component {...pageProps} />
-                </App>
+                <I18nProvider lngDict={lngDict} locale={router.locale}>
+                    <App>
+                        <Component {...pageProps} />
+                    </App>
+                </I18nProvider>
             </MantineProvider>
         </>
     )

@@ -1,4 +1,5 @@
 import { createStyles, List, Stack, Title, Text, Timeline, Image, Group, BackgroundImage } from '@mantine/core'
+import { useI18n } from 'next-localization'
 
 
 const useStyles = createStyles((theme) => ({
@@ -21,7 +22,6 @@ const useStyles = createStyles((theme) => ({
 
 const timelineItems = [
     {
-        title: '30 SEPT - 6 OCTOBER START OF THE PLATFORM',
         content: (
             <Image
                 src='https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F001%2F852%2F171%2F895'
@@ -30,24 +30,9 @@ const timelineItems = [
             />
         )
     },
-    {
-        title: '1 OCT - 30 NOV - WORKING WEEKS ',
-        content: (
-            null
-        )
-    },
-    {
-        title: '1-5 DEC - votation for the proposals',
-        content: (
-            null
-        )
-    },
-    {
-        title: '6 DEC confirmed community projects supported ',
-        content: (
-            null
-        )
-    },
+    {},
+    {},
+    {},
 
 ]
 
@@ -76,6 +61,7 @@ const ideasItems = [
 
 export default function Home() {
     const metrika = process.env.NEXT_PUBLIC_YANDEX_METRIKA
+    const i18n = useI18n()
     const { classes: s, cx } = useStyles()
     return (
         <Stack
@@ -103,8 +89,7 @@ export default function Home() {
                         pollinating.space
                     </Title>
                     <Text>
-                        pollinating.space - the ecosystem for pollinating green communities that include several resources to help<br />
-                        greening and ecological activist and communities to cooperate online in safe and productive environment
+                        {i18n.t('index.hero')}
                     </Text>
                 </Stack>
             </BackgroundImage>
@@ -116,34 +101,34 @@ export default function Home() {
                         textTransform: 'uppercase',
                     }}
                 >
-                    What pollinating.space ecosystem include:
+                    {i18n.t('index.ecosystemList.title')}
                 </Title>
                 <List
                     icon='·'
                 >
                     <List.Item>
-                        website pollinating.space - give a overall view about the project
+                    {i18n.t('index.ecosystemList.0')}
                     </List.Item>
                     <List.Item>
-                        tool communication (Element with local server)
+                    {i18n.t('index.ecosystemList.1')}
                     </List.Item>
                     <List.Item>
-                        space for storage info (Google space or other spaces to organize info?)
+                    {i18n.t('index.ecosystemList.2')}
                     </List.Item>
                     <List.Item>
                         <Stack
                             spacing={0}
                         >
-                            tool for facilitation and collab online
+                            {i18n.t('index.ecosystemList.3.title')}
                             <List
                                 icon='·'
                                 withPadding
                             >
                                 <List.Item>
-                                    prepaid account at SessionLab
+                                {i18n.t('index.ecosystemList.3.item0')}
                                 </List.Item>
                                 <List.Item>
-                                    prepaid account at Padlet
+                                {i18n.t('index.ecosystemList.3.item1')}
                                 </List.Item>
                             </List>
                         </Stack>
@@ -152,16 +137,16 @@ export default function Home() {
                         <Stack
                             spacing={0}
                         >
-                            IT tools for greening communities:
+                            {i18n.t('index.ecosystemList.4.title')}
                             <List
                                 icon='·'
                                 withPadding
                             >
                                 <List.Item>
-                                    mesto.io help communities to count trees they care about
+                                {i18n.t('index.ecosystemList.4.item0')}
                                 </List.Item>
                                 <List.Item>
-                                    croudforse help communities to systemize their efforts in caring the garden
+                                {i18n.t('index.ecosystemList.4.item1')}
                                 </List.Item>
                             </List>
                         </Stack>
@@ -175,13 +160,7 @@ export default function Home() {
                     size='xl'
                     weight='bold'
                 >
-                    We share free access for communities that wish to promote online collaboration to save the greening Infrastructure in their Cities.
-                </Text>
-                <Text
-                    size='xl'
-                    weight='bold'
-                >
-                    if you want to join and get access for the pollinating IT tool ecosystem  - fill the google form (create a questionnaire)
+                    {i18n.t('index.feedback')}
                 </Text>
             </Stack>
             <Stack
@@ -192,7 +171,7 @@ export default function Home() {
                         textTransform: 'uppercase',
                     }}
                 >
-                    Time line
+                    {i18n.t('index.timeline.title')}
                 </Title>
                 <Timeline
                     lineWidth={2}
@@ -207,7 +186,7 @@ export default function Home() {
                         }
                     }}
                 >
-                    {timelineItems.map(({ title, content }) => (
+                    {false && timelineItems.map(({ title, content }) => (
                         <Timeline.Item
                             title={title}
                         >
@@ -251,4 +230,11 @@ export default function Home() {
             </Stack>
         </Stack>
     )
+}
+
+export async function getStaticProps({ locale }) {
+    const { default: lngDict = {} } = await import(`../locales/${locale}.json`)
+    return {
+        props: { lngDict }
+    }
 }
