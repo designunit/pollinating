@@ -48,7 +48,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ burger, opened }) => {
                     className={s.logo}
                 >
                     <Image
-                        src='/logo.svg'
+                        src='/logo.png'
                     />
                 </div>
 
