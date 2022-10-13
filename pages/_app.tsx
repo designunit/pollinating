@@ -6,10 +6,13 @@ import "@/style.css"
 import { useRouter } from "next/router"
 import { I18nProvider } from "next-localization"
 
-export default function AppPage(props: AppProps) {
+type Props = AppProps<{
+    lngDict: Record<string, string>
+}>
+
+export default function MyApp(props: Props) {
     const { Component, pageProps } = props
     const router = useRouter()
-    // @ts-ignore
     const { lngDict } = pageProps
 
     return (
