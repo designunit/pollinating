@@ -130,7 +130,6 @@ const useStyle = createStyles(theme => ({
     },
     content: {
         padding: theme.spacing.lg,
-        width: "100%",
     },
 }))
 
