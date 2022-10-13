@@ -2,7 +2,7 @@ import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
 import { GetServerSideProps, NextPage } from "next"
 import { getPageBySlug } from "@/server/lib"
-import { BackgroundImage, createStyles, Stack, Text, Title } from "@mantine/core"
+import { BackgroundImage, createStyles, Stack, Text, Timeline, Title } from "@mantine/core"
 import { useI18n } from "next-localization"
 
 const components = {
@@ -15,6 +15,15 @@ const components = {
             }}
         />
     ),
+    p: (props) => (
+        <p {...props} style={{ maxWidth: 900 }} />
+    ),
+    iframe: (props) => (
+        <iframe {...props} style={{ padding: "40 0" }} />
+    ),
+    li: (props) => (
+        <li {...props} style={{ maxWidth: 900 }} />
+    ),
     h2: (props) => (
         <Title
             {...props}
@@ -24,12 +33,45 @@ const components = {
             }}
         />
     ),
+    Timeline: (props) => (
+        <Timeline
+            {...props}
+            lineWidth={2}
+            radius='xl'
+            bulletSize={20}
+            // active={i18n.t("index.timeline.items").length}
+            color={"timeline"}
+            // style={theme => ({
+            //     paddingTop: theme.spacing.md,
+            //     paddingBottom: theme.spacing.md,
+            // })}
+            style={{
+                paddingTop: 40,
+                paddingBottom: 40,
+            }}
+            styles={{
+                itemTitle: {
+                    textTransform: "uppercase",
+                    fontWeight: "bold",
+                },
+                itemBullet: {
+                    ["& > *"]: {
+                        fontSize: ".8em",
+                    },
+                },
+            }}
+        />
+    ),
+    TimelineItem: (props) => (
+        <Timeline.Item
+            {...props}
+        />
+    ),
 }
 
 const useStyle = createStyles(theme => ({
     content: {
         padding: theme.spacing.xl,
-        // marginTop: 100,
     },
     hero: {
         position: "relative",
