@@ -33,6 +33,10 @@ const components = {
         // eslint-disable-next-line jsx-a11y/alt-text
         <Image
             {...props}
+            style={{
+                maxWidth: "100%",
+                height: "auto",
+            }}
         />
     ),
     p: (props) => (
