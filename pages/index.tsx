@@ -47,12 +47,7 @@ const components = {
             lineWidth={2}
             radius='xl'
             bulletSize={20}
-            // active={i18n.t("index.timeline.items").length}
             color={"timeline"}
-            // style={theme => ({
-            //     paddingTop: theme.spacing.md,
-            //     paddingBottom: theme.spacing.md,
-            // })}
             style={{
                 paddingTop: 40,
                 paddingBottom: 40,
