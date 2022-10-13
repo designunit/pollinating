@@ -6,6 +6,7 @@ import { getPageBySlug } from "@/server/lib"
 import { BackgroundImage, createStyles, Stack, Text, Timeline, Title } from "@mantine/core"
 import { useI18n } from "next-localization"
 import Image from "next/future/image"
+import { NextSeo } from "next-seo"
 
 const components = {
     img: (props) => (
@@ -104,6 +105,26 @@ const Index: NextPage<Props> = ({ source }) => {
 
     return (
         <>
+            <NextSeo
+                title={t("og_title")}
+                description={t("og_description")}
+                canonical="https://www.pollinating.space/"
+                openGraph={{
+                    url: "https://www.pollinating.space/",
+                    title: t("og_title"),
+                    description: t("og_description"),
+                    images: [
+                        {
+                            url: "/og.jpg",
+                            width: 2227,
+                            height: 1188,
+                            alt: "www.pollinating.space",
+                            type: "image/jpeg",
+                        },
+                    ],
+                    site_name: t("og_site_name"),
+                }}
+            />
             <BackgroundImage
                 className={cx(s.hero)}
                 src='/hero.png'

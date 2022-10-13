@@ -7,5 +7,9 @@
     "menu_rules": "Правила",
     "menu_join": "Присоединяйтесь",
 
-    "join_href": "https://forms.gle/Ew5ZbehUT4z7TAno7"
+    "join_href": "https://forms.gle/Ew5ZbehUT4z7TAno7",
+
+    "og_title": "pollinating.space",
+    "og_description": "платформа для эффективного и безопасного онлайн сотрудничества экологических активистов и сообществ",
+    "og_site_name": "pollinating.space"
 }
