@@ -1,3 +1,4 @@
+import rehypeImgSize from "rehype-img-size"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
 import { GetServerSideProps, NextPage } from "next"
@@ -20,10 +21,6 @@ const components = {
         // eslint-disable-next-line jsx-a11y/alt-text
         <Image
             {...props}
-            width={100}
-            height={100}
-            // layout='responsive'
-            // alt={props.alt}
         />
     ),
     p: (props) => (
@@ -153,7 +150,13 @@ const Index: NextPage<Props> = ({ source }) => {
 
 export const getStaticProps: GetServerSideProps<Props> = async ({ locale }) => {
     const source = await getPageBySlug(locale, "pollinating")
-    const mdxSource = await serialize(source)
+    const mdxSource = await serialize(source, {
+        mdxOptions: {
+            rehypePlugins: [
+                [rehypeImgSize, { dir: "public" }],
+            ],
+        },
+    })
     const { default: lngDict = {} } = await import(`../locales/${locale}.json`)
 
     return {
