@@ -1,5 +1,5 @@
 {
-    "hero_caption": "pollinating.space - A platform for environmental activists and communities for productive remote collaboration in a safe environment",
+    "hero_caption": "pollinating.space — A platform for environmental activists and communities\nfor productive remote collaboration in a safe environment",
 
     "menu_about": "About",
     "menu_how": "How it works",
@@ -8,6 +8,8 @@
     "menu_join": "Join",
 
     "join_href": "https://forms.gle/PuZRf4ethvse2mr49",
+    
+    "btn_join": "Join Green Cities",
 
     "og_title": "pollinating.space",
     "og_description": "A platform for environmental activists and communities for productive remote collaboration in a safe environment",

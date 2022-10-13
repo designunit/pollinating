@@ -18,7 +18,6 @@ export default function MyApp(props: Props) {
     return (
         <>
             <Head>
-                <title>pollinating</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 

@@ -1,5 +1,5 @@
 {
-    "hero_caption": "pollinating.space - the ecosystem for pollinating green communities that include several resources to help \ngreening and ecological activist and communities to cooperate online in safe and productive environment",
+    "hero_caption": "pollinating.space — the ecosystem for pollinating green communities that include several resources to help\ngreening and ecological activist and communities to cooperate online in safe and productive environment",
 
     "menu_about": "О платформе",
     "menu_how": "Как все работает",
@@ -8,6 +8,8 @@
     "menu_join": "Присоединяйтесь",
 
     "join_href": "https://forms.gle/Ew5ZbehUT4z7TAno7",
+
+    "btn_join": "Присоединиться к Green Cities",
 
     "og_title": "pollinating.space",
     "og_description": "платформа для эффективного и безопасного онлайн сотрудничества экологических активистов и сообществ",
