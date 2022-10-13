@@ -1,6 +1,6 @@
 
-import { createStyles, Group, Header, Image, MediaQuery } from '@mantine/core'
-import { AppMenu } from '@/components/AppMenu'
+import { createStyles, Group, Header, Image, MediaQuery } from "@mantine/core"
+import { AppMenu } from "@/components/AppMenu"
 
 type AppHeaderProps = {
     burger: React.ReactNode
@@ -9,25 +9,25 @@ type AppHeaderProps = {
 
 const useStyles = createStyles((theme) => ({
     header: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'baseline',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "baseline",
         top: 0,
-        backgroundColor: 'transparent',
+        backgroundColor: "transparent",
     },
     opened: {
-        backgroundColor: 'white',
+        backgroundColor: "white",
     },
     root: {
         flex: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
         maxWidth: 1520,
-        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 1.57%, rgba(255, 255, 255, 0) 1.58%, rgba(255, 255, 255, 0.5) 32.29%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%)',
+        background: "linear-gradient(180deg, rgba(255, 255, 255, 0) 1.57%, rgba(255, 255, 255, 0) 1.58%, rgba(255, 255, 255, 0.5) 32.29%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%)",
     },
     logo: {
-        [theme.fn.smallerThan('md')]: {
+        [theme.fn.smallerThan("md")]: {
             width: 60,
             height: 60,
         },
@@ -40,7 +40,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ burger, opened }) => {
         <Header
             withBorder={false}
             height={60}
-            p={'sm'}
+            p={"sm"}
             className={cx(s.header, opened && s.opened)}
             fixed
         >
@@ -52,11 +52,11 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ burger, opened }) => {
                         src='/logo.png'
                         width={96}
                         height={96}
-                        alt={'pollinating'}
+                        alt={"pollinating"}
                     />
                 </div>
 
-                <MediaQuery smallerThan='xs' styles={{ display: 'none' }}>
+                <MediaQuery smallerThan='xs' styles={{ display: "none" }}>
                     <Group
                         noWrap
                     >
@@ -64,7 +64,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ burger, opened }) => {
                     </Group>
                 </MediaQuery>
 
-                <MediaQuery largerThan='xs' styles={{ display: 'none' }}>
+                <MediaQuery largerThan='xs' styles={{ display: "none" }}>
                     {burger}
                 </MediaQuery>
             </div>

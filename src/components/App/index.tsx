@@ -1,8 +1,8 @@
 
-import { AppHeader } from '@/components/AppHeader'
-import { AppShell, Burger, MediaQuery, Navbar } from '@mantine/core'
-import { useState } from 'react'
-import { AppMenu } from '@/components/AppMenu'
+import { AppHeader } from "@/components/AppHeader"
+import { AppShell, Burger, MediaQuery, Navbar } from "@mantine/core"
+import { useState } from "react"
+import { AppMenu } from "@/components/AppMenu"
 
 export type AppProps = {
     children?: React.ReactNode
@@ -16,10 +16,10 @@ export const App: React.FC<AppProps> = ({ children }) => {
             fixed={false}
             styles={theme => ({
                 main: {
-                    overflow: 'hidden',
+                    overflow: "hidden",
                 },
                 body: {
-                    minHeight: 'calc(100vh - 60px)', // fullscreen - header
+                    minHeight: "calc(100vh - 60px)", // fullscreen - header
                 },
             })}
             header={(
@@ -34,7 +34,7 @@ export const App: React.FC<AppProps> = ({ children }) => {
                 />
             )}
             navbar={(
-                <MediaQuery largerThan='xs' styles={{ display: 'none' }}>
+                <MediaQuery largerThan='xs' styles={{ display: "none" }}>
                     <Navbar
                         hidden={!opened}
                         fixed
@@ -51,7 +51,7 @@ export const App: React.FC<AppProps> = ({ children }) => {
             )}
             footer={(
                 <div style={{
-                    height: '4rem',
+                    height: "4rem",
                 }} />
             )}
         >

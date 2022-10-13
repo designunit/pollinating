@@ -1,18 +1,18 @@
-import { Anchor, createStyles, Select } from '@mantine/core'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { Anchor, createStyles, Select } from "@mantine/core"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
 const useStyles = createStyles((theme) => ({
     navLinks: {
         flexGrow: 1,
-        textAlign: 'right',
-        display: 'flex',
-        alignItems: 'baseline',
+        textAlign: "right",
+        display: "flex",
+        alignItems: "baseline",
         gap: theme.spacing.xl,
     },
     vertical: {
-        flexDirection: 'column',
-        alignItems: 'flex-end',
+        flexDirection: "column",
+        alignItems: "flex-end",
         padding: theme.spacing.xl,
     },
 }))
@@ -24,35 +24,35 @@ export type AppMenuProps = {
 
 const items = [
     {
-        ru: 'О платформе',
-        en: 'About',
-        de: 'de-About',
-        href: '/#about',
+        ru: "О платформе",
+        en: "About",
+        de: "de-About",
+        href: "/#about",
     },
     {
-        ru: 'Как все работает',
-        en: 'How it works',
-        de: 'de-Как все работает',
-        text: '',
-        href: '/#how',
+        ru: "Как все работает",
+        en: "How it works",
+        de: "de-Как все работает",
+        text: "",
+        href: "/#how",
     },
     {
-        ru: 'Календарь',
-        en: 'Calendar',
-        de: 'de-Calendar',
-        href: '/#calendar',
+        ru: "Календарь",
+        en: "Calendar",
+        de: "de-Calendar",
+        href: "/#calendar",
     },
     {
-        ru: 'Правила',
-        en: 'Rules',
-        de: 'de-Rules',
-        href: '/#rules',
+        ru: "Правила",
+        en: "Rules",
+        de: "de-Rules",
+        href: "/#rules",
     },
     {
-        ru: 'Присоединяйтесь',
-        en: 'Join',
-        de: 'de-Join',
-        href: '/',
+        ru: "Присоединяйтесь",
+        en: "Join",
+        de: "de-Join",
+        href: "/",
     },
 ]
 
@@ -72,15 +72,15 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) =
             ))}
             <Select
                 sx={{
-                    maxWidth: '4rem',
+                    maxWidth: "4rem",
                 }}
                 variant='unstyled'
                 defaultValue={router.locale}
-                onChange={value => router.push('/', '/', { locale: value })}
+                onChange={value => router.push("/", "/", { locale: value })}
                 data={[
-                    { value: 'ru', label: 'РУС' },
-                    { value: 'en', label: 'ENG' },
-                    { value: 'de', label: 'DE' },
+                    { value: "ru", label: "РУС" },
+                    { value: "en", label: "ENG" },
+                    { value: "de", label: "DE" },
                 ]}
             />
         </nav>

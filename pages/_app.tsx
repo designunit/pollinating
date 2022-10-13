@@ -1,10 +1,10 @@
-import { AppProps } from 'next/app'
-import Head from 'next/head'
-import { MantineProvider } from '@mantine/core'
-import { App } from '@/components/App'
-import '@/style.css'
-import { useRouter } from 'next/router'
-import { I18nProvider } from 'next-localization'
+import { AppProps } from "next/app"
+import Head from "next/head"
+import { MantineProvider } from "@mantine/core"
+import { App } from "@/components/App"
+import "@/style.css"
+import { useRouter } from "next/router"
+import { I18nProvider } from "next-localization"
 
 export default function AppPage(props: AppProps) {
     const { Component, pageProps } = props
@@ -23,18 +23,18 @@ export default function AppPage(props: AppProps) {
                 withGlobalStyles
                 withNormalizeCSS
                 theme={{
-                    fontFamily: 'Jost, sans-serif',
-                    primaryColor: 'default',
+                    fontFamily: "Jost, sans-serif",
+                    primaryColor: "default",
                     colors: {
-                        default: ['#22303B', '#539376', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B', '#22303B'],
-                        timeline: ['#539376', '#539376', '#539376', '#539376', '#539376', '#539376', '#539376', '#539376', '#539376', '#539376'],
+                        default: ["#22303B", "#539376", "#22303B", "#22303B", "#22303B", "#22303B", "#22303B", "#22303B", "#22303B", "#22303B"],
+                        timeline: ["#539376", "#539376", "#539376", "#539376", "#539376", "#539376", "#539376", "#539376", "#539376", "#539376"],
                     },
                     headings: {
-                        fontFamily: 'Jost, sans-serif',
+                        fontFamily: "Jost, sans-serif",
                     },
                     globalStyles: theme => ({
                         main: {
-                            padding: '0 !important',
+                            padding: "0 !important",
                         },
                         body: {
                             color: theme.colors.default[0],
@@ -46,29 +46,29 @@ export default function AppPage(props: AppProps) {
                         },
                     }),
                     components: {
-                        'Text': {
+                        "Text": {
                             styles: theme => ({
                                 root: {
                                     color: theme.colors.default[0],
-                                    whiteSpace: 'pre-line',
+                                    whiteSpace: "pre-line",
                                 },
                             }),
                         },
-                        'Title': {
-                            styles: theme => ({
-                                root: {
-                                    color: theme.colors.default[0],
-                                },
-                            }),
-                        },
-                        'List': {
+                        "Title": {
                             styles: theme => ({
                                 root: {
                                     color: theme.colors.default[0],
                                 },
                             }),
                         },
-                        'Timeline': {
+                        "List": {
+                            styles: theme => ({
+                                root: {
+                                    color: theme.colors.default[0],
+                                },
+                            }),
+                        },
+                        "Timeline": {
                             styles: theme => ({
                                 item: {
                                     color: theme.colors.default[0],
