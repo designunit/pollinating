@@ -7,5 +7,9 @@
     "menu_rules": "Rules",
     "menu_join": "Join",
 
-    "join_href": "https://forms.gle/PuZRf4ethvse2mr49"
+    "join_href": "https://forms.gle/PuZRf4ethvse2mr49",
+
+    "og_title": "pollinating.space",
+    "og_description": "A platform for environmental activists and communities for productive remote collaboration in a safe environment",
+    "og_site_name": "pollinating.space"
 }
