@@ -42,7 +42,7 @@ export const App: React.FC<AppProps> = ({ children }) => {
                             zIndex: 101,
                         }}
                     >
-                        <AppMenu 
+                        <AppMenu
                             vertical
                             onClick={() => setOpened(false)}
                         />

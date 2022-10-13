@@ -1,7 +1,6 @@
 import { createStyles, List, Stack, Title, Text, Timeline, Image, Group, BackgroundImage } from '@mantine/core'
 import { useI18n } from 'next-localization'
 
-
 const useStyles = createStyles((theme) => ({
     section: {
         width: '100%',
@@ -21,7 +20,7 @@ const useStyles = createStyles((theme) => ({
     idSpan: {
         position: 'absolute',
         marginTop: '-8rem',
-    }
+    },
 }))
 
 const timelineItems = [
@@ -32,7 +31,7 @@ const timelineItems = [
                 width={200}
                 height={200}
             />
-        )
+        ),
     },
     {},
     {},
@@ -84,7 +83,7 @@ const limelineIcons = {
             <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(240 12 12)" />
             <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(300 12 12)" />
         </svg>
-    )
+    ),
 }
 export default function Home() {
     const metrika = process.env.NEXT_PUBLIC_YANDEX_METRIKA
@@ -222,8 +221,8 @@ export default function Home() {
                         itemBullet: {
                             ['& > *']: {
                                 fontSize: '.8em',
-                            }
-                        }
+                            },
+                        },
                     }}
                 >
                     {(i18n.t('index.timeline.items', { limelineIcons }) as unknown as any[]).map((x, i) => (
@@ -405,6 +404,6 @@ export default function Home() {
 export async function getStaticProps({ locale }) {
     const { default: lngDict = {} } = await import(`../locales/${locale}.json`)
     return {
-        props: { lngDict }
+        props: { lngDict },
     }
 }

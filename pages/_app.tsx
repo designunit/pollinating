@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { I18nProvider } from 'next-localization'
 
 export default function AppPage(props: AppProps) {
-    const { Component, pageProps, } = props
+    const { Component, pageProps } = props
     const router = useRouter()
     // @ts-ignore
     const { lngDict, ...rest } = pageProps
@@ -42,8 +42,8 @@ export default function AppPage(props: AppProps) {
                         Title: {
                             root: {
                                 color: theme.colors.default[0],
-                            }
-                        }
+                            },
+                        },
                     }),
                     components: {
                         'Text': {
@@ -52,30 +52,30 @@ export default function AppPage(props: AppProps) {
                                     color: theme.colors.default[0],
                                     whiteSpace: 'pre-line',
                                 },
-                            })
+                            }),
                         },
                         'Title': {
                             styles: theme => ({
                                 root: {
                                     color: theme.colors.default[0],
                                 },
-                            })
+                            }),
                         },
                         'List': {
                             styles: theme => ({
                                 root: {
                                     color: theme.colors.default[0],
                                 },
-                            })
+                            }),
                         },
                         'Timeline': {
                             styles: theme => ({
                                 item: {
                                     color: theme.colors.default[0],
                                 },
-                            })
+                            }),
                         },
-                    }
+                    },
                 }}
             >
                 <I18nProvider lngDict={lngDict} locale={router.locale}>

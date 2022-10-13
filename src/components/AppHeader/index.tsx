@@ -30,8 +30,8 @@ const useStyles = createStyles((theme) => ({
         [theme.fn.smallerThan('md')]: {
             width: 60,
             height: 60,
-        }
-    }
+        },
+    },
 }))
 
 export const AppHeader: React.FC<AppHeaderProps> = ({ burger, opened }) => {
