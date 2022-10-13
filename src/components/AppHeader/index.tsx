@@ -50,6 +50,8 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ burger, opened }) => {
                 >
                     <Image
                         src='/logo.png'
+                        width={96}
+                        height={96}
                     />
                 </div>
 
