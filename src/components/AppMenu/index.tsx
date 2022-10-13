@@ -1,4 +1,4 @@
-import { Anchor, createStyles, Input, Select } from '@mantine/core'
+import { Anchor, createStyles, Select } from '@mantine/core'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -62,7 +62,7 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) =
     return (
         <nav className={cx(s.navLinks, vertical && s.vertical)}>
             {items.map(({ href, ...x }) => (
-                <Link href={href} passHref>
+                <Link href={href} passHref key={href}>
                     <Anchor component="a"
                         onClick={onClick}
                     >

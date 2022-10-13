@@ -10,7 +10,7 @@ export default function AppPage(props: AppProps) {
     const { Component, pageProps } = props
     const router = useRouter()
     // @ts-ignore
-    const { lngDict, ...rest } = pageProps
+    const { lngDict } = pageProps
 
     return (
         <>

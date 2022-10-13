@@ -1,4 +1,7 @@
-import { createStyles, List, Stack, Title, Text, Timeline, Image, Group, BackgroundImage } from '@mantine/core'
+// todo: this is not good
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+import { createStyles, List, Stack, Title, Text, Timeline, Image, BackgroundImage } from '@mantine/core'
 import { useI18n } from 'next-localization'
 
 const useStyles = createStyles((theme) => ({
@@ -227,6 +230,7 @@ export default function Home() {
                 >
                     {(i18n.t('index.timeline.items', { limelineIcons }) as unknown as any[]).map((x, i) => (
                         <Timeline.Item
+                            key={i}
                             title={x.title}
                             bullet={limelineIcons?.[i]}
                         >
@@ -278,7 +282,7 @@ export default function Home() {
                     {i18n.t('index.events.title')}
                 </Title>
                 {(i18n.t('index.events.items') as unknown as any[]).map((x, i) => (
-                    <Text>
+                    <Text key={i}>
                         <b>
                             {x.bold}
                         </b>
@@ -297,7 +301,7 @@ export default function Home() {
                     {i18n.t('index.roles.title')}
                 </Title>
                 {(i18n.t('index.roles.items') as unknown as any[]).map((x, i) => (
-                    <Text>
+                    <Text key={i}>
                         <b>
                             {x.bold}
                         </b>
