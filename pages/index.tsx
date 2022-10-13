@@ -8,15 +8,6 @@ import { useI18n } from "next-localization"
 import Image from "next/future/image"
 
 const components = {
-    Test: () => (
-        <div
-            style={{
-                width: 100,
-                height: 100,
-                backgroundColor: "lime",
-            }}
-        />
-    ),
     img: (props) => (
         // eslint-disable-next-line jsx-a11y/alt-text
         <Image
