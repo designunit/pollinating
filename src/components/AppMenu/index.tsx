@@ -52,7 +52,7 @@ const items = [
         ru: "Присоединяйтесь",
         en: "Join",
         de: "de-Join",
-        href: "/",
+        href: "https://forms.gle/Ew5ZbehUT4z7TAno7",
     },
 ]
 
