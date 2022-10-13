@@ -119,9 +119,14 @@ const useStyle = createStyles(theme => ({
         },
     },
     intro: {
+        padding: theme.spacing.lg,
         width: "100%",
         maxWidth: 960,
         gap: "2rem",
+    },
+    content: {
+        padding: theme.spacing.lg,
+        width: "100%",
     },
 }))
 
@@ -193,7 +198,7 @@ const Index: NextPage<Props> = ({ source }) => {
             </BackgroundImage>
 
             <Stack align={"center"}>
-                <Stack>
+                <Stack className={s.content}>
                     <MDXRemote {...source} components={components} />
                 </Stack>
             </Stack>
