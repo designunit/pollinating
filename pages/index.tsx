@@ -93,7 +93,7 @@ export default function Home() {
     const { classes: s, cx } = useStyles()
     return (
         <Stack
-            spacing={'4rem' as any}
+            spacing={'3rem' as any}
             align='center'
         >
             <BackgroundImage
@@ -141,6 +141,7 @@ export default function Home() {
                 className={s.section}
             >
                 <Title
+                    order={2}
                     sx={{
                         textTransform: 'uppercase',
                     }}
@@ -150,7 +151,7 @@ export default function Home() {
                 <Stack>
                     {(i18n.t('index.platform.items') as unknown as any[]).map((x, i) => (
                         <Text key={i}>
-                            <Title order={3}>
+                            <Title order={4}>
                                 {x.title}
                             </Title>
                             {x.text}
@@ -171,7 +172,12 @@ export default function Home() {
             <Stack
                 className={s.section}
             >
-                <Title>
+                <Title
+                    order={2}
+                    sx={{
+                        textTransform: 'uppercase',
+                    }}
+                >
                     {i18n.t('index.gsIs.title')}
                 </Title>
                 <List>
@@ -194,7 +200,8 @@ export default function Home() {
             <Stack
                 className={s.section}
             >
-                <Title order={2}
+                <Title
+                    order={2}
                     sx={{
                         textTransform: 'uppercase',
                     }}
@@ -232,7 +239,7 @@ export default function Home() {
             <Stack
                 className={s.section}
             >
-                <Title order={2}
+                <Title
                     sx={{
                         textTransform: 'uppercase',
                     }}
@@ -305,7 +312,7 @@ export default function Home() {
                 <span id='calendar'
                     className={s.idSpan}
                 />
-                <Title order={2}
+                <Title
                     sx={{
                         textTransform: 'uppercase',
                     }}
@@ -323,7 +330,7 @@ export default function Home() {
                 <span id='rules'
                     className={s.idSpan}
                 />
-                <Title order={2}
+                <Title
                     sx={{
                         textTransform: 'uppercase',
                     }}
