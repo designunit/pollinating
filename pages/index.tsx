@@ -23,12 +23,20 @@ const components = {
     li: (props) => (
         <li {...props} style={{ maxWidth: 900 }} />
     ),
+    ol: (props) => (
+        <ol {...props} style={{ marginLeft: -16 }} />
+    ),
+    ul: (props) => (
+        <ul {...props} style={{ marginLeft: -16 }} />
+    ),
     h2: (props) => (
         <Title
             {...props}
             order={2}
             sx={{
                 textTransform: "uppercase",
+                marginTop: 16,
+                marginBottom: 8,
             }}
         />
     ),
