@@ -7,7 +7,7 @@ const useStyles = createStyles((theme) => ({
         flexGrow: 1,
         textAlign: "right",
         display: "flex",
-        alignItems: "baseline",
+        alignItems: "center",
         gap: theme.spacing.xl,
     },
     vertical: {
