@@ -9,6 +9,25 @@ import Image from "next/future/image"
 import { NextSeo } from "next-seo"
 import Head from "next/head"
 
+// snowflake icon
+const Snowflake = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" />
+        <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(60 12 12)" />
+        <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(120 12 12)" />
+        <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(180 12 12)" />
+        <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(240 12 12)" />
+        <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(300 12 12)" />
+    </svg>
+)
+
+const icons = new Map([
+    ["snowflake", (
+        <Snowflake key="snowflake"/>
+    )],
+])
+
 const components = {
     img: (props) => (
         // eslint-disable-next-line jsx-a11y/alt-text
@@ -46,9 +65,10 @@ const components = {
         <Timeline
             {...props}
             lineWidth={2}
-            radius='xl'
+            radius={"lg"}
             bulletSize={20}
             color={"timeline"}
+            active={1000}
             style={{
                 paddingTop: 40,
                 paddingBottom: 40,
@@ -66,11 +86,16 @@ const components = {
             }}
         />
     ),
-    TimelineItem: (props) => (
-        <Timeline.Item
-            {...props}
-        />
-    ),
+    TimelineItem: (props) => {
+        const bullet = icons.has(props.bullet) ? icons.get(props.bullet) : props.bullet
+
+        return (
+            <Timeline.Item
+                {...props}
+                bullet={bullet}
+            />
+        )
+    },
 }
 
 const useStyle = createStyles(theme => ({
