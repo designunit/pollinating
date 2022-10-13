@@ -141,7 +141,7 @@ const Index: NextPage<Props> = ({ source }) => {
 }
 
 export const getStaticProps: GetServerSideProps<Props> = async ({ locale }) => {
-    const source = await getPageBySlug("ru", "pollinating")
+    const source = await getPageBySlug(locale, "pollinating")
     const mdxSource = await serialize(source)
     const { default: lngDict = {} } = await import(`../locales/${locale}.json`)
 

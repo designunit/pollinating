@@ -65,6 +65,10 @@ export async function getPageBySlug(lang: string, slug: string) {
     let path = join(dataDirectory, `${slug}.${lang}.mdx`)
     let page = await getPage(path)
     if (!page) {
+        let path = join(dataDirectory, `${slug}.ru.mdx`)
+        page = await getPage(path)
+    }
+    if (!page) {
         return null
     }
 
