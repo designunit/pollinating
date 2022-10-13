@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,14 +20,23 @@
   },
   "homepage": "https://github.com/tmshv/pollinating#readme",
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@mantine/core": "^5.5.2",
+    "@mantine/hooks": "^5.5.2",
+    "@mantine/next": "^5.5.2",
     "eslint": "^8.23.1",
     "next": "^12.3.1",
+    "next-localization": "^0.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^4.8.3"
   },
   "devDependencies": {
     "@types/node": "18.7.18",
-    "@types/react": "18.0.21"
+    "@types/react": "18.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "eslint-config-next": "^12.3.1",
+    "eslint-plugin-import": "^2.26.0"
   }
 }
