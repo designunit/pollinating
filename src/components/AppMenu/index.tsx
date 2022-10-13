@@ -1,4 +1,5 @@
 import { Anchor, createStyles, Select } from "@mantine/core"
+import { useI18n } from "next-localization"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
@@ -22,54 +23,53 @@ export type AppMenuProps = {
     onClick?: () => void
 }
 
-const items = [
-    {
-        ru: "О платформе",
-        en: "About",
-        ar: "de-About",
-        href: "/#about",
-    },
-    {
-        ru: "Как все работает",
-        en: "How it works",
-        ar: "de-Как все работает",
-        text: "",
-        href: "/#how",
-    },
-    {
-        ru: "Календарь",
-        en: "Calendar",
-        ar: "de-Calendar",
-        href: "/#calendar",
-    },
-    {
-        ru: "Правила",
-        en: "Rules",
-        ar: "de-Rules",
-        href: "/#rules",
-    },
-    {
-        ru: "Присоединяйтесь",
-        en: "Join",
-        ar: "de-Join",
-        href: "https://forms.gle/Ew5ZbehUT4z7TAno7",
-    },
-]
-
 export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) => {
     const { classes: s, cx } = useStyles()
     const router = useRouter()
+    const { t } = useI18n()
+
     return (
         <nav className={cx(s.navLinks, vertical && s.vertical)}>
-            {items.map(({ href, ...x }) => (
-                <Link href={href} passHref key={href}>
-                    <Anchor component="a"
-                        onClick={onClick}
-                    >
-                        {x[router.locale]}
-                    </Anchor>
-                </Link>
-            ))}
+            <Link href={"/#about"} passHref>
+                <Anchor component="a"
+                    onClick={onClick}
+                >
+                    {t("menu_about")}
+                </Anchor>
+            </Link>
+            <Link href={"/#how"} passHref>
+                <Anchor component="a"
+                    onClick={onClick}
+                >
+                    {t("menu_how")}
+                </Anchor>
+            </Link>
+            <Link href={"/#about"} passHref>
+                <Anchor component="a"
+                    onClick={onClick}
+                >
+                    {t("menu_about")}
+                </Anchor>
+            </Link>
+            <Link href={"/#calendar"} passHref>
+                <Anchor component="a"
+                    onClick={onClick}
+                >
+                    {t("menu_calendar")}
+                </Anchor>
+            </Link>
+            <Link href={"/#rules"} passHref>
+                <Anchor component="a"
+                    onClick={onClick}
+                >
+                    {t("menu_rules")}
+                </Anchor>
+            </Link>
+            <Link href={t("join_href")} passHref>
+                <a>
+                    {t("menu_join")}
+                </a>
+            </Link>
             <Select
                 sx={{
                     maxWidth: "4rem",

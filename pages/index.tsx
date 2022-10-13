@@ -136,7 +136,7 @@ const Index: NextPage<Props> = ({ source }) => {
                             space
                         </Title>
                         <Text>
-                            {t("index.hero")}
+                            {t("hero_caption")}
                         </Text>
                     </Stack>
                 </Stack>
