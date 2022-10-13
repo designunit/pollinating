@@ -24,7 +24,7 @@ const Snowflake = () => (
 
 const icons = new Map([
     ["snowflake", (
-        <Snowflake key="snowflake"/>
+        <Snowflake key="snowflake" />
     )],
 ])
 
@@ -99,9 +99,6 @@ const components = {
 }
 
 const useStyle = createStyles(theme => ({
-    content: {
-        padding: theme.spacing.xl,
-    },
     title: {
         textShadow: "0px 4px 0px #FFFFFF",
         fontSize: "min(96px, 12vw)",
@@ -121,10 +118,10 @@ const useStyle = createStyles(theme => ({
             width: "100%",
         },
     },
-    section: {
+    intro: {
         width: "100%",
-        maxWidth: 1520,
-        padding: theme.spacing.xs,
+        maxWidth: 960,
+        gap: "2rem",
     },
 }))
 
@@ -165,19 +162,15 @@ const Index: NextPage<Props> = ({ source }) => {
             </Head>
             <BackgroundImage
                 className={cx(s.hero)}
-                src='/hero.png'
+                src="/hero.png"
             >
                 <Stack
-                    justify='center'
-                    align='center'
-                    px='xs'
+                    justify="center"
+                    align="center"
                 >
                     <Stack
                         align="start"
-                        className={s.section}
-                        sx={{
-                            gap: "4rem",
-                        }}
+                        className={s.intro}
                     >
                         <Title className={s.title} >
                             pollinating<br />
@@ -198,9 +191,12 @@ const Index: NextPage<Props> = ({ source }) => {
                     </Stack>
                 </Stack>
             </BackgroundImage>
-            <div className={s.content}>
-                <MDXRemote {...source} components={components} />
-            </div>
+
+            <Stack align={"center"}>
+                <Stack>
+                    <MDXRemote {...source} components={components} />
+                </Stack>
+            </Stack>
         </>
     )
 }
