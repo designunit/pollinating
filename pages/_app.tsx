@@ -1,8 +1,9 @@
+import "@/style.css"
+
 import { AppProps } from "next/app"
 import Head from "next/head"
 import { MantineProvider } from "@mantine/core"
 import { App } from "@/components/App"
-import "@/style.css"
 import { useRouter } from "next/router"
 import { I18nProvider } from "next-localization"
 
