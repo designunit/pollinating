@@ -26,32 +26,32 @@ const items = [
     {
         ru: "О платформе",
         en: "About",
-        de: "de-About",
+        ar: "de-About",
         href: "/#about",
     },
     {
         ru: "Как все работает",
         en: "How it works",
-        de: "de-Как все работает",
+        ar: "de-Как все работает",
         text: "",
         href: "/#how",
     },
     {
         ru: "Календарь",
         en: "Calendar",
-        de: "de-Calendar",
+        ar: "de-Calendar",
         href: "/#calendar",
     },
     {
         ru: "Правила",
         en: "Rules",
-        de: "de-Rules",
+        ar: "de-Rules",
         href: "/#rules",
     },
     {
         ru: "Присоединяйтесь",
         en: "Join",
-        de: "de-Join",
+        ar: "de-Join",
         href: "https://forms.gle/Ew5ZbehUT4z7TAno7",
     },
 ]
@@ -78,9 +78,9 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) =
                 defaultValue={router.locale}
                 onChange={value => router.push("/", "/", { locale: value })}
                 data={[
-                    { value: "ru", label: "РУС" },
-                    { value: "en", label: "ENG" },
-                    { value: "de", label: "DE" },
+                    { value: "ru", label: "RU" },
+                    { value: "en", label: "EN" },
+                    { value: "ar", label: "AR" },
                 ]}
             />
         </nav>
