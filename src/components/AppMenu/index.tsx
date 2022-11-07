@@ -30,13 +30,6 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) =
 
     return (
         <nav className={cx(s.navLinks, vertical && s.vertical)}>
-            <Link href={"/#about"} passHref>
-                <Anchor component="a"
-                    onClick={onClick}
-                >
-                    {t("menu_about")}
-                </Anchor>
-            </Link>
             <Link href={"/#how"} passHref>
                 <Anchor component="a"
                     onClick={onClick}
