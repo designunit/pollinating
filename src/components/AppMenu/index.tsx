@@ -16,9 +16,6 @@ const useStyles = createStyles((theme) => ({
         alignItems: "flex-end",
         padding: theme.spacing.xl,
     },
-    joinLink: {
-        color: theme.colors.default[0],
-    },
 }))
 
 export type AppMenuProps = {
@@ -69,11 +66,11 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) =
                 </Anchor>
             </Link>
             <Link href={t("join_href")} passHref>
-                <a
-                    className={s.joinLink}
+                <Anchor component="a"
+                    underline
                 >
                     {t("menu_join")}
-                </a>
+                </Anchor>
             </Link>
             <Select
                 sx={{
