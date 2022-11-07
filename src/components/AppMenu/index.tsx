@@ -18,7 +18,7 @@ const useStyles = createStyles((theme) => ({
     },
     joinLink: {
         color: theme.colors.default[0],
-    }
+    },
 }))
 
 export type AppMenuProps = {
@@ -70,7 +70,7 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) =
             </Link>
             <Link href={t("join_href")} passHref>
                 <a
-                className={s.joinLink}
+                    className={s.joinLink}
                 >
                     {t("menu_join")}
                 </a>
