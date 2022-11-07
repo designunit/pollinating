@@ -66,9 +66,11 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) =
                 </Anchor>
             </Link>
             <Link href={t("join_href")} passHref>
-                <a>
+                <Anchor component="a"
+                    underline
+                >
                     {t("menu_join")}
-                </a>
+                </Anchor>
             </Link>
             <Select
                 sx={{

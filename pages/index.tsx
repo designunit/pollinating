@@ -83,9 +83,7 @@ const components = {
                     fontWeight: "bold",
                 },
                 itemBullet: {
-                    ["& > *"]: {
-                        fontSize: ".8em",
-                    },
+                    fontSize: ".8em",
                 },
             }}
         />
