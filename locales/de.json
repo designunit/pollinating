@@ -1,17 +1,17 @@
 {
-    "hero_caption": "A platform for environmental activists and communities\nfor productive remote collaboration in a safe environment",
+    "hero_caption": "Eine Plattform für Umweltaktivist:innen und Gemeinschaften\nfür eine effektive und sichere Zusammenarbeit aus der Ferne",
 
-    "menu_about": "About",
-    "menu_how": "How it works",
-    "menu_calendar": "Calendar",
-    "menu_rules": "Rules",
-    "menu_join": "Join",
+    "menu_about": "Über uns",
+    "menu_how": "Wie Wir funktionieren",
+    "menu_calendar": "Kalender",
+    "menu_rules": "Regeln",
+    "menu_join": "Begleiten Sie Uns",
 
     "join_href": "https://forms.gle/PuZRf4ethvse2mr49",
     
-    "btn_join": "Join Green Cities",
+    "btn_join": "Eintreten Green Cities",
 
     "og_title": "pollinating.space",
-    "og_description": "A platform for environmental activists and communities for productive remote collaboration in a safe environment",
+    "og_description": "Eine Plattform für Umweltaktivist:innen und Gemeinschaften für eine effektive und sichere Zusammenarbeit aus der Ferne",
     "og_site_name": "pollinating.space"
 }
