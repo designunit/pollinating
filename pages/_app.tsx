@@ -81,7 +81,7 @@ export default function MyApp(props: Props) {
                     },
                 }}
             >
-                <I18nProvider lngDict={lngDict} locale={router.locale}>
+                <I18nProvider lngDict={lngDict} locale={router.locale!}>
                     <App>
                         <Component {...pageProps} />
                     </App>

@@ -4,8 +4,9 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
 import { GetServerSideProps, NextPage } from "next"
 import { getPageBySlug } from "@/server/lib"
 import { BackgroundImage, Button, createStyles, Stack, Text, Timeline, Title } from "@mantine/core"
+import type { TimelineProps, TimelineItemProps } from "@mantine/core"
 import { useI18n } from "next-localization"
-import Image from "next/future/image"
+import Image, { ImageProps } from "next/future/image"
 import { NextSeo } from "next-seo"
 import Head from "next/head"
 
@@ -29,7 +30,7 @@ const icons = new Map([
 ])
 
 const components = {
-    img: (props) => (
+    img: (props: ImageProps) => (
         // eslint-disable-next-line jsx-a11y/alt-text
         <Image
             {...props}
@@ -39,22 +40,22 @@ const components = {
             }}
         />
     ),
-    p: (props) => (
+    p: (props: object) => (
         <p {...props} style={{ maxWidth: 900 }} />
     ),
-    iframe: (props) => (
+    iframe: (props: object) => (
         <iframe {...props} style={{ padding: "40 0" }} />
     ),
-    li: (props) => (
+    li: (props: object) => (
         <li {...props} style={{ maxWidth: 900 }} />
     ),
-    ol: (props) => (
+    ol: (props: object) => (
         <ol {...props} style={{ marginLeft: -16 }} />
     ),
-    ul: (props) => (
+    ul: (props: object) => (
         <ul {...props} style={{ marginLeft: -16 }} />
     ),
-    h2: (props) => (
+    h2: (props: object) => (
         <Title
             {...props}
             order={2}
@@ -65,7 +66,7 @@ const components = {
             }}
         />
     ),
-    Timeline: (props) => (
+    Timeline: (props: TimelineProps) => (
         <Timeline
             {...props}
             lineWidth={2}
@@ -88,8 +89,8 @@ const components = {
             }}
         />
     ),
-    TimelineItem: (props) => {
-        const bullet = icons.has(props.bullet) ? icons.get(props.bullet) : props.bullet
+    TimelineItem: (props: TimelineItemProps) => {
+        const bullet = icons.has(props.bullet as string) ? icons.get(props.bullet as string) : props.bullet
 
         return (
             <Timeline.Item
@@ -200,7 +201,7 @@ const Index: NextPage<Props> = ({ source }) => {
 
             <Stack align={"center"}>
                 <Stack className={s.content}>
-                    <MDXRemote {...source} components={components} />
+                    <MDXRemote {...source} components={components as any} />
                 </Stack>
             </Stack>
         </>
@@ -208,11 +209,17 @@ const Index: NextPage<Props> = ({ source }) => {
 }
 
 export const getStaticProps: GetServerSideProps<Props> = async ({ locale }) => {
-    const source = await getPageBySlug(locale, "pollinating")
+    const source = await getPageBySlug(locale!, "pollinating")
+    if (!source) {
+        return {
+            notFound: true,
+        }
+    }
+
     const mdxSource = await serialize(source, {
         mdxOptions: {
             rehypePlugins: [
-                [rehypeImgSize, { dir: "public" }],
+                [rehypeImgSize as any, { dir: "public" }],
             ],
         },
     })
