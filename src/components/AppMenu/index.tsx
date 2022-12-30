@@ -75,7 +75,8 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) =
                 data={[
                     { value: "ru", label: "RU" },
                     { value: "en", label: "EN" },
-                    // { value: "ar", label: "AR" },
+                    { value: "de", label: "DE" },
+                    { value: "ar", label: "AR" },
                 ]}
             />
         </nav>
