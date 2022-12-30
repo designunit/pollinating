@@ -71,11 +71,12 @@ export const AppMenu: React.FC<AppMenuProps> = ({ vertical = false, onClick }) =
                 }}
                 variant='unstyled'
                 defaultValue={router.locale}
-                onChange={value => router.push("/", "/", { locale: value })}
+                onChange={value => router.push("/", "/", { locale: value! })}
                 data={[
                     { value: "ru", label: "RU" },
                     { value: "en", label: "EN" },
-                    // { value: "ar", label: "AR" },
+                    { value: "de", label: "DE" },
+                    { value: "ar", label: "AR" },
                 ]}
             />
         </nav>
