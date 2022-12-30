@@ -6,7 +6,7 @@ import { getPageBySlug } from "@/server/lib"
 import { BackgroundImage, Button, createStyles, Stack, Text, Timeline, Title } from "@mantine/core"
 import type { TimelineProps, TimelineItemProps } from "@mantine/core"
 import { useI18n } from "next-localization"
-import Image, { ImageProps } from "next/future/image"
+import Image, { ImageProps } from "next/image"
 import { NextSeo } from "next-seo"
 import Head from "next/head"
 
